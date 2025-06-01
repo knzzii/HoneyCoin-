@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoneyDrop Token</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <img src="logo.png" alt="HoneyDrop Token Logo" class="logo" />
+    <h1 class="reveal">HoneyDrop Token</h1>
+    <p class="reveal">
+        HoneyDrop adalah token baru berbasis komunitas dengan tujuan mendukung peternak lebah lokal dan konservasi lingkungan.
+        Setiap pembelian token turut mendanai program pelestarian lebah dan pertanian berkelanjutan. Bergabunglah dengan gerakan kami
+        untuk masa depan yang lebih manis dan alami.
+    </p>
+    <button class="cta-button reveal">Beli Sekarang</button>
+    <div class="social-links reveal">
+        <a href="https://twitter.com/honeydroptoken" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me/honeydroptoken" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+
+    <div class="chart-container reveal">
+        <h2>Live Harga Token</h2>
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <script>
+        // Dummy Chart, replace with API logic when contract address available
+        const ctx = document.getElementById('priceChart').getContext('2d');
+        const priceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Harga (USD)',
+                    data: [0.05, 0.07, 0.06, 0.08, 0.12, 0.10],
+                    backgroundColor: 'rgba(255, 204, 0, 0.2)',
+                    borderColor: '#ffcc00',
+                    borderWidth: 2,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        // Scroll animation
+        ScrollReveal().reveal('.reveal', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-out',
+            origin: 'bottom',
+            interval: 200
+        });
+    </script>
+</body>
+</html>
